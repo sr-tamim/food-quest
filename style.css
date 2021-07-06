@@ -75,7 +75,7 @@ section{
 }
 #booking-container{
     padding: 60px 0 100px 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
 }
 #booking h3{
     color: rgb(255, 146, 182);
@@ -228,13 +228,11 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1250px;
-    width: 100%;
 }
 .item-container{
-    width: 25%;
+    width: 22%;
     background: whitesmoke;
-    padding: 20px 20px 30px 20px;
+    padding: 20px 20px 60px 20px;
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 30px;
@@ -259,9 +257,19 @@ section{
 .item-card p{
     font-size: 18px;
     text-align: justify;
-    line-height: 1.5;
+    line-height: 1.2;
     padding-left: 15px;
     padding-right: 15px;
+    margin-bottom: 40px;
+}
+.item-card a{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(to right, #CD587E, #762F76);
+    padding: 10px 25px;
+    margin-left: 15px;
+    border-radius: 20px;
 }
 
 
@@ -285,8 +293,8 @@ footer h3{
     margin-top: 0;
 }
 #footer-head img{
-    width: 55px;
-    height: 50px;
+    width: 65px;
+    height: 60px;
     margin-right: 10px;
 }
 #footer-head #color1{color:#CD587E;}
