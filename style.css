@@ -13,6 +13,8 @@ section{
     align-items: center;
 }
 
+
+
 #home{
     background: url('img/home-back.jpg');
     background-repeat: no-repeat;
@@ -64,6 +66,8 @@ section{
 }
 
 
+
+
 #booking{
     text-align: center;
     height: auto;
@@ -100,6 +104,8 @@ section{
     border-radius: 10px;
     box-shadow: 0 0 30px rgb(36, 36, 36);
 }
+
+
 
 #awards{
     height: auto;
@@ -156,6 +162,8 @@ section{
 }
 
 
+
+
 #about-us .img-container{
     padding: 0 0 0 5%;
 }
@@ -192,6 +200,7 @@ section{
     box-shadow: 0 0 40px rgba(118, 47, 118, 0.4),
                 0 0 10px #762F76;
 }
+
 
 
 
@@ -271,6 +280,7 @@ section{
     margin-left: 15px;
     border-radius: 20px;
 }
+
 
 
 
