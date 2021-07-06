@@ -14,7 +14,7 @@ section{
 }
 
 #home{
-    background: url('img/slider-1.jpg');
+    background: url('img/home-back.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -66,20 +66,16 @@ section{
 
 #booking{
     text-align: center;
+    height: auto;
+    display: block;
     text-shadow: 0 0 20px black;
     background: url('img/booking-back.jpg');
-    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 #booking-container{
     padding: 60px 0 100px 0;
     background: rgba(0, 0, 0, 0.4);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 #booking h3{
     color: rgb(255, 146, 182);
@@ -98,17 +94,24 @@ section{
     text-decoration: none;
     color: white;
     font-size: 25px;
-    background: linear-gradient(to right, #cd587dc7, #762f76c9);
-    padding: 10px 20px;
+    font-weight: 700;
+    background: linear-gradient(#cd587dc7, #762f76c9);
+    padding: 10px 30px;
     border-radius: 10px;
     box-shadow: 0 0 30px rgb(36, 36, 36);
+}
+
+#awards{
+    height: auto;
+    justify-content: space-evenly;
+    padding: 80px 0;
 }
 
 
 
 
 .change-color{
-    color: #ca4f97;
+    color: #bb4289;
 }
 
 .flex-container{
@@ -128,15 +131,16 @@ section{
 .flex-container img{
     width: 100%;
 }
-#our-motto h1{
+#our-slogan h1{
     font-size: 60px;
     font-family: 'Kaushan Script', cursive;
+    letter-spacing: 2px;
 }
-#our-motto h3{
+#our-slogan h3{
     font-size: 22px;
     margin-bottom: 60px;
 }
-#our-motto a{
+#our-slogan a{
     text-decoration: none;
     color: white;
     background: linear-gradient(to right, #CD587E, #762F76);
@@ -147,7 +151,7 @@ section{
     box-shadow: 0 0 40px rgba(118, 47, 118, 0.4),
                 0 0 10px #762F76;
 }
-#our-motto .img-container{
+#our-slogan .img-container{
     padding: 0;
 }
 
@@ -164,16 +168,16 @@ section{
 #about-us h2{
     font-size: 40px;
     font-weight: 700;
+    color: #3d3d3d;
     letter-spacing: 2px;
     line-height: 1;
     margin-top: 10px;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 #about-us h2 span{font-size: 50px;}
 #about-us p{
     text-align: justify;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 600;
     margin-bottom: 50px;
     padding-right: 5%;
 }
@@ -209,11 +213,13 @@ section{
 }
 #dishes-header h2{
     font-size: 40px;
+    color: #3d3d3d;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 #dishes-header h3{
     font-size: 20px;
+    color: #444444;
     letter-spacing: 1px;
     font-weight: 700;
     margin-bottom: 60px;
@@ -261,8 +267,8 @@ section{
 
 
 footer{
-    background: linear-gradient(linen, #ffe7d1);
-    padding: 100px 0 0 0;
+    background: linear-gradient(linen, #ffecda);
+    padding: 20px 0 0 0;
 }
 #footer-head{
     font-size: 25px;
@@ -274,7 +280,8 @@ footer h3{
     text-align: center;
     font-size: 25px;
     font-family: 'Kaushan Script', cursive;
-    color: grey;
+    letter-spacing: 1px;
+    color: #5d5d5d;
     margin-top: 0;
 }
 #footer-head img{
@@ -286,6 +293,8 @@ footer h3{
 #footer-head #color2{color: #762F76;}
 #copyright{
     font-size: 16px;
+    font-weight: 600;
+    color: #666666;
     text-align: center;
     padding: 50px 0;
 }
