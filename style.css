@@ -1,0 +1,38 @@
+
+
+
+body{
+    margin: 0;
+}
+header{
+    text-align: center;
+    background: linear-gradient(ivory,white);
+}
+header img{
+    height: 20vh;
+}
+
+#home{
+    background: url('img/ProjectCover1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#home-cover{
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#home-container{
+    text-align: center;
+    width: 50%;
+}
+#home-container h1{
+    font-size: 60px;
+}
+#home-container h3{
+    font-size: 25px;
+}
