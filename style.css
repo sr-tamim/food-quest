@@ -13,7 +13,7 @@ header img{
 }
 
 #home{
-    background: url('img/ProjectCover1.jpg');
+    background: url('img/slider-1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -59,5 +59,28 @@ header img{
     color: #ca0076;
 }
 #mottoImg{
+    width: 100%;
+}
+
+
+#dishes{
+    padding: 150px 0;
+}
+#dishes-header{
+    text-align: center;
+    margin-bottom: 50px;
+}
+#dishes-cards{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.item-container{
+    width: 25%;
+}
+.item-card{
+    width: 100%;
+}
+.item-card img{
     width: 100%;
 }
