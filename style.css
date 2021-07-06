@@ -1,15 +1,15 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
 
 body{
     margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
 }
-header{
-    text-align: center;
-    background: linear-gradient(ivory,white);
-}
-header img{
-    height: 20vh;
+section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 #home{
@@ -19,9 +19,9 @@ header img{
     background-position: center;
 }
 #home-cover{
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(9, 12, 56, 0.65), rgba(16, 6, 66, 0.60), rgba(33, 9, 72, 0.65), rgba(0, 0, 0, 0.65));
     color: white;
-    height: 80vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,18 +30,45 @@ header img{
     text-align: center;
     width: 50%;
 }
+#home-container img{
+    width: 200px;
+    background: radial-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.15));
+    border-radius: 50px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+}
 #home-container h1{
-    font-size: 60px;
+    font-size: 70px;
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing: 5px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 #home-container h3{
-    font-size: 25px;
+    font-size: 19px;
+    font-weight: 400;
+    margin-bottom: 50px;
+    text-shadow: 0 0 20px rgb(255, 255, 255);
+}
+#home-container a{
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(to right, #CD587E, #762F76);
+    padding: 10px 30px;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow:0 0 30px rgba(205, 92, 92);
+}
+
+
+/* change the color of specific word */
+.change-color{
+    color: #ca4f97;
 }
 
 
 .flex-container{
     display: flex;
     align-items: center;
-    padding: 100px 0;
 }
 .flex-left{
     width: 50%;
@@ -52,23 +79,89 @@ header img{
     width: 50%;
     padding: 0 5%;
 }
-#our-motto{
-    font-size: 40px;
-}
-#our-motto span{
-    color: #ca0076;
-}
-#mottoImg{
+.flex-container img{
     width: 100%;
 }
+#our-motto h1{
+    font-size: 60px;
+    font-family: 'Kaushan Script', cursive;
+}
+#our-motto h3{
+    font-size: 22px;
+    margin-bottom: 60px;
+}
+#our-motto a{
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(to right, #CD587E, #762F76);
+    padding: 10px 30px;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow:0 0 40px rgba(205, 92, 92, 0.8);
+}
+#our-motto .img-container{
+    padding: 0 5% 0 0;
+}
+
+
+#about-us .img-container{
+    padding: 0 0 0 5%;
+}
+#about-us h3{
+    color: palevioletred;
+    font-size: 25px;
+    font-family: 'Kaushan Script', cursive;
+    margin-bottom: 10px;
+}
+#about-us h2{
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 10px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+#about-us p{
+    text-align: justify;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+#about-us a{
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(to right, #762F76, #CD587E);
+    padding: 10px 30px;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow:0 0 40px rgba(205, 92, 92, 0.8);
+}
+
+
 
 
 #dishes{
-    padding: 150px 0;
+    background: linear-gradient(white, whitesmoke, #e6e6e6);
 }
 #dishes-header{
     text-align: center;
     margin-bottom: 50px;
+}
+#dishes-header h4{
+    color: palevioletred;
+    font-size: 25px;
+    font-family: 'Kaushan Script', cursive;
+    margin-bottom: 10px;
+}
+#dishes-header h2{
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#dishes-header h3{
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 #dishes-cards{
     display: flex;
@@ -77,10 +170,27 @@ header img{
 }
 .item-container{
     width: 25%;
+    background: whitesmoke;
+    padding: 20px 20px 30px 20px;
+    border-radius: 30px;
+    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.2) inset,
+                0 0 20px rgba(0, 0, 0, 0.15);
 }
 .item-card{
     width: 100%;
 }
 .item-card img{
     width: 100%;
+    border-radius: 20px 20px 5px 5px;
+}
+.item-card h4{
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.item-card p{
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.5;
 }
