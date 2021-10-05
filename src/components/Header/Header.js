@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import emptyCart from '../../utilities/emptyCart';
 import "./Header.css";
 
 function showSideCart() {
@@ -7,7 +8,7 @@ function showSideCart() {
 }
 
 const Header = props => {
-    const { cart } = props;
+    const { cart, setCart } = props;
     // console.log(cart)
 
 
@@ -30,31 +31,38 @@ const Header = props => {
                     <NavLink activeStyle={{ color: '#ce3b5d' }} style={linkStyle} to="/foods">Foods</NavLink>
                 </div>
                 <div className="link" onClick={showSideCart}>Cart
-                    <span id="cart-length">{cart.cart.length}</span>
+                    <span id="cart-length">{cart.items.length}</span>
                 </div>
             </nav>
+
+            {/* cart drawer */}
             <div id="side-cart">
                 <div id="cart-head">
                     <h1>Cart</h1>
                     <div className="close-side-cart" style={{ cursor: 'pointer' }} onClick={showSideCart}>X</div>
                 </div>
+                <div className="side-cart-button">
+                    <button onClick={() => emptyCart(setCart)}>Empty Cart</button>
+                </div>
+                <div>
 
-                {
-                    cart.cart.filter((f, index) => cart.cart.indexOf(f) === index).map(food => {
-                        return (
-                            <div className="side-cart-item" key={food.strMeal}>
-                                <img src={food.strMealThumb} alt="" />
-                                <div className="side-cart-item-info">
-                                    <h3>{food.strMeal}</h3>
-                                    <h3>Quantity: {
-                                        cart.cart.filter(i => i.idMeal === food.idMeal).length
-                                    }
-                                    </h3>
+                    {
+                        cart.items.filter((f, index) => cart.items.indexOf(f) === index).map(food => {
+                            return (
+                                <div className="side-cart-item" key={food.strMeal}>
+                                    <img src={food.strMealThumb} alt="" />
+                                    <div className="side-cart-item-info">
+                                        <h3>{food.strMeal}</h3>
+                                        <h3>Quantity: {
+                                            cart.items.filter(i => i.idMeal === food.idMeal).length
+                                        }
+                                        </h3>
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    })
-                }
+                            )
+                        })
+                    }
+                </div>
             </div>
         </header>
     );

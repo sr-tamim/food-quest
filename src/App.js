@@ -7,17 +7,16 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
-import useCart from './hooks/useCart/useCart';
+import useCart from './hooks/useCart';
 
 function App() {
   const [cart, setCart] = useCart();
-  // useEffect(() => getCartFromDB(setCart), []);
   console.log(cart);
 
   return (
     <div className="App">
       <Router>
-        <Header cart={cart} />
+        <Header cart={cart} setCart={setCart} />
         <Switch>
           <Route exact path="/" >
             <Home />
