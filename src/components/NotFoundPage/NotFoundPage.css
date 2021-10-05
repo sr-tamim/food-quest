@@ -1,0 +1,33 @@
+
+
+#not-found-page{
+    margin: 150px 0;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Kaushan Script', sans-serif;
+}
+
+#not-found-page span{
+    font-size: 9vw;
+    background: linear-gradient(to right, #CD587E, #762F76);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 20px;
+}
+
+#not-found-page #home-link{
+    font-size: 30px;
+    text-decoration: none;
+    position: relative;
+    padding: 0 5px;
+    cursor: pointer;
+}
+#not-found-page #home-link:hover::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background:  linear-gradient(to right, #CD587E, #762F76);
+}

@@ -1,0 +1,76 @@
+
+#food{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+#breadCrumb span{
+    background: linear-gradient(to right, #ff3c7d, #881b84);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#foodImg{
+    text-align: center;
+    margin: 50px 0;
+}
+#foodImg img{
+    width: 100%;
+    border-radius: 20px;
+}
+#foodImg div{
+    width: 70%;
+    min-width: 250px;
+    display: inline-block;
+    position: relative;
+    height: max-content;
+}
+#foodImg div::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, red, #6b00d6);
+    background-size: 300%;
+    background-position: left;
+    z-index: -1;
+    filter: blur(20px) opacity(0.6);
+    animation: rotateBack 2s ease-in-out infinite alternate;
+}
+@keyframes rotateBack {
+    to{
+        background-position:right;       
+    }
+}
+
+#foodName{ font-size: 40px;}
+#foodName, #foodCategory{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#foodName span, #foodCategory span{
+    background: linear-gradient(to right, #ff3c7d, #881b84);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#ingredients{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 800;
+    margin: 20px 0;
+}
+#ingredients details{
+    text-align: left;
+    display: inline-block;
+    background: linear-gradient(to right, #ff3c7d, #881b84);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+#ingredients ul{
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px 0;
+}

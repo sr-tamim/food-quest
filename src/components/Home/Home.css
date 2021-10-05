@@ -1,0 +1,315 @@
+
+
+
+#body{
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    position: relative;
+}
+section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 100px 0;
+}
+
+
+
+#home{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+#home-cover{
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(9, 12, 56, 0.65), rgba(16, 6, 66, 0.60), rgba(33, 9, 72, 0.65), rgba(0, 0, 0, 0.65));
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 150px 0;
+}
+#home-container{
+    text-align: center;
+    width: 80%;
+}
+#home-container #logo{
+    position: relative;
+    isolation: isolate;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50px;
+}
+#home-container #logo::after{
+    background: whitesmoke;
+    content: '';
+    position: absolute;
+    inset: 0;
+    filter: blur(20px);
+    z-index: -1;
+    border-radius: inherit;
+}
+#home-container img{
+    width: 200px;
+    border-radius: inherit;
+}
+
+#home-container h1{
+    font-size: 70px;
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing: 5px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    margin: 70px 0 30px 0;
+}
+#home-container h3{
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    margin-bottom: 50px;
+    text-shadow: 0 0 20px #000000;
+}
+#home-container a{
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(to right, #CD587E, #762F76);
+    padding: 10px 30px;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow:0 0 30px rgba(205, 92, 92);
+}
+
+
+
+
+#booking{
+    text-align: center;
+    height: max-content;
+    min-height: max-content;
+    display: block;
+    text-shadow: 0 0 20px black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+#booking-container{
+    padding: 60px 0 100px 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+#booking h3{
+    color: rgb(255, 146, 182);
+    font-family: 'Kaushan Script', cursive;
+    font-size: 35px;
+    letter-spacing: 3px;
+}
+#booking h1{
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+#booking a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    background: linear-gradient(#cd587dc7, #762f76c9);
+    padding: 10px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgb(36, 36, 36);
+}
+
+
+
+#awards{
+    height: auto;
+    min-height: auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 80px 0;
+}
+#awards img{
+    margin: 20px;
+}
+
+
+
+.change-color{
+    color: #bb4289;
+}
+
+.flex-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.flex-left{
+    width: 100%;
+    padding: 5%;
+}
+.flex-right{
+    width: 100%;
+    padding: 5%;
+}
+.flex-container img{
+    width: 100%;
+}
+#our-slogan h1{
+    font-size: 60px;
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing: 2px;
+}
+#our-slogan h3{
+    font-size: 22px;
+    margin-bottom: 60px;
+}
+#our-slogan a{
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(to right, #CD587E, #762F76);
+    padding: 10px 30px;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(118, 47, 118, 0.4),
+                0 0 10px #762F76;
+}
+#our-slogan .img-container{
+    padding: 0;
+}
+
+
+
+
+#about-us .img-container{
+    padding: 0 0 0 5%;
+}
+#about-us h3{
+    color: palevioletred;
+    font-size: 25px;
+    font-family: 'Kaushan Script', cursive;
+    margin-bottom: 10px;
+}
+#about-us h2{
+    font-size: 40px;
+    font-weight: 700;
+    color: #3d3d3d;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-top: 10px;
+}
+#about-us h2 span{font-size: 50px;}
+#about-us p{
+    text-align: justify;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    padding-right: 5%;
+}
+#about-us a{
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(to right, #762F76, #CD587E);
+    padding: 10px 30px;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(118, 47, 118, 0.4),
+                0 0 10px #762F76;
+}
+
+
+
+
+
+#dishes{
+    background: linear-gradient(white, rgba(250, 240, 230, 0.4));
+    flex-direction: column;
+    margin-bottom: 0;
+}
+#dishes-header{
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+#dishes-header h4{
+    color: palevioletred;
+    font-size: 25px;
+    font-family: 'Kaushan Script', cursive;
+    margin-bottom: 10px;
+}
+#dishes-header h2{
+    font-size: 40px;
+    color: #3d3d3d;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#dishes-header h3{
+    font-size: 20px;
+    color: #444444;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+#dishes-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.item-container{
+    width: 90%;
+    background: whitesmoke;
+    padding: 20px 20px 60px 20px;
+    margin: 40px 20px;
+    border-radius: 30px;
+    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.2) inset,
+                0 0 20px rgba(0, 0, 0, 0.15);
+}
+.item-card{
+    width: 100%;
+}
+.item-card img{
+    width: 100%;
+    border-radius: 20px 20px 5px 5px;
+}
+.item-card h4{
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.item-card p{
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.2;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 40px;
+}
+.item-card .item-link{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(to right, #CD587E, #762F76);
+    padding: 10px 25px;
+    margin-left: 15px;
+    border-radius: 20px;
+}
+
+
+@media screen and (min-width: 1024px) {
+    section{
+        height: 100vh;
+        min-height: 768px;
+    }
+    #home-container{ width: 50% }
+    .flex-left, .flex-right{ width: 50% }
+    .item-container{ width: 22% }
+}
