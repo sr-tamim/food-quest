@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
+import { CartContext } from '../../App';
+import addToCart from '../../utilities/addToCart';
 import "./FoodDetails.css";
 
 const FoodDetails = () => {
+    const useCart = useContext(CartContext);
+
     const { foodId } = useParams();
 
     const history = useHistory();
@@ -29,7 +33,7 @@ const FoodDetails = () => {
         }
     }
     return (
-        <div id='food'>
+        <div id='food-details'>
             <h4 id="breadCrumb"><span>/ foods / {foodId}</span></h4>
             <div id="foodImg">
                 <div><img src={food.strMealThumb} alt="" /></div>
@@ -47,6 +51,9 @@ const FoodDetails = () => {
                         }
                     </ul>
                 </details>
+            </div>
+            <div className="add-to-cart-but">
+                <button style={{ zIndex: 100 }} onClick={() => addToCart(food, useCart)}>Add to cart</button>
             </div>
         </div>
     );

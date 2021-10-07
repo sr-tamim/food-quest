@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { CartContext } from '../../App';
 import emptyCart from '../../utilities/emptyCart';
 import "./Header.css";
 
@@ -7,10 +8,8 @@ function showSideCart() {
     document.getElementById('side-cart').classList.toggle('show');
 }
 
-const Header = props => {
-    const { cart, setCart } = props;
-    // console.log(cart)
-
+const Header = () => {
+    const [cart, setCart] = CartContext;
 
     document.addEventListener('scroll', () => {
         if (window.scrollY > 50) { document.getElementById('header').style.background = 'white' }
