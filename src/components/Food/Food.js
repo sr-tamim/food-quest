@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CartContext } from '../../App';
 import addToCart from '../../utilities/addToCart';
@@ -9,7 +9,7 @@ import './Food.css';
 const Food = (props) => {
     const { food } = props;
 
-    const useCart = CartContext;
+    const useCart = useContext(CartContext);
 
     return (
         <div style={{ margin: '30px' }} className="single-food">
