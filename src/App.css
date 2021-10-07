@@ -1,0 +1,6 @@
+/* get fonts from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+.App{
+    position: relative;
+}

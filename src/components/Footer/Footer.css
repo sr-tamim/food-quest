@@ -1,0 +1,33 @@
+
+footer{
+    background: linear-gradient(rgba(250, 240, 230, 0.4), #ffecda);
+    padding: 80px 0 0 0;
+}
+#footer-head{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer h3{
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing: 1px;
+    color: #5d5d5d;
+    margin-top: 0;
+}
+#footer-head img{
+    width: 65px;
+    height: 60px;
+    margin-right: 10px;
+}
+#footer-head #color1{color:#CD587E;}
+#footer-head #color2{color: #762F76;}
+#copyright{
+    font-size: 16px;
+    font-weight: 600;
+    color: #666666;
+    text-align: center;
+    padding: 50px 0;
+}
