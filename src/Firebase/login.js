@@ -6,5 +6,5 @@ export default function loginUser(auth, email, password, setUser) {
             // Signed in 
             setUser(userCredential.user);
         })
-        .catch((error) => { console.log(error.message) });
+        .catch((error) => { alert(error.message) });
 }

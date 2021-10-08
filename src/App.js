@@ -24,7 +24,7 @@ function App() {
   const [user, setUser] = useState({});
   onAuthStateChanged(auth, (usr) => {
     if (usr) { setUser(usr) }
-    else if (user.email) {
+    else if (Object.keys(user).length) {
       setUser({})
       /*if usr is null but user is not {} then set user as {}*/
     }

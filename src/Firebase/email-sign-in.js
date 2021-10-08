@@ -1,15 +1,14 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
-function createUserWithEmail(auth, email, password, name, setUser) {
+function createUserWithEmail(auth, email, password, name) {
     createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+        .then(() => {
             // Signed in 
             updateProfile(auth.currentUser, {
                 displayName: name
-            }).catch((error) => console.log(error.message));
-            setUser(userCredential.user);
+            }).catch((error) => alert(error.message));
         })
-        .catch((error) => console.log(error.message));
+        .catch((error) => alert(error.message));
 }
 
 export default createUserWithEmail;

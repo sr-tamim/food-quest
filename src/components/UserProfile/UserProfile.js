@@ -7,18 +7,23 @@ import "./UserProfile.css";
 const UserProfile = () => {
     const { user, setUser } = useContext(UserContext);
     const auth = useContext(AuthContext);
+
+    const { displayName, photoURL, email } = user.providerData[0];
     return (
         <div>
             <div id="profile-container">
-                <span style={{ color: "gray" }}>
+                <div className="profile-img">
                     {
-                        user.photoURL ? <img src={user.photoURL} alt="" />
+                        photoURL ? <img src={user.photoURL} alt="" />
                             : "img not found"
                     }
-                </span>
-                <br />
-                <h1>{user.displayName}</h1>
-                <h3>{user.email}</h3>
+                </div>
+                <h1>
+                    {
+                        displayName || user.reloadUserInfo.screenName
+                    }
+                </h1>
+                <h4>{email || 'email access denied'}</h4>
             </div>
             <button id="sign-out-but" onClick={() => userSignOut(auth, setUser)} >Sign Out</button>
         </div>

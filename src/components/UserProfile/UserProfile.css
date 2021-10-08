@@ -2,10 +2,21 @@
 #profile-container{
     text-align: center;
 }
-#profile-container img{
-    width: 100px;
+.profile-img{
+    color: gray;
+    font-size: 14px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     box-shadow: 0 0 20px rgb(214, 214, 214);
+    margin: 0 auto;
+    overflow: hidden;
+}
+#profile-container img{
+    width: 100%;
 }
 #sign-out-but{
     background: crimson;
