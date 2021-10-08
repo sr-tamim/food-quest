@@ -6,14 +6,15 @@ import UserProfile from '../UserProfile/UserProfile';
 import googleSignIn from '../../Firebase/google-sign-in';
 import { AuthContext } from '../../App';
 import gitHubLogin from '../../Firebase/github-sign-in';
+import fbLogin from '../../Firebase/fb-sign-in';
 
 export const UserContext = createContext();
 
 const UserPage = props => {
     const auth = useContext(AuthContext);
     const [isRegistered, setIsRegistered] = useState(false);
-    const { user, setUser } = props.useUser;
-    console.log(user)
+    const { user } = props.useUser;
+    console.log(user);
     return (
         <div id="user-page">
             <UserContext.Provider value={props.useUser}>
@@ -24,9 +25,13 @@ const UserPage = props => {
                             {isRegistered ? <Login />
                                 : <SignUp />
                             }
-
-                            <button className='sign-in-buttons' onClick={() => googleSignIn(auth, setUser)} >Sign in with Google</button>
-                            <button className='sign-in-buttons' onClick={() => gitHubLogin(auth, setUser)} >Sign in with GitHub</button>
+                            <br /><br />
+                            <div>
+                                Sign In With <br />
+                                <button className='sign-in-buttons' onClick={() => googleSignIn(auth)} ><i class="fab fa-google"></i></button>
+                                <button className='sign-in-buttons' onClick={() => gitHubLogin(auth)} ><i class="fab fa-github"></i></button>
+                                <button className='sign-in-buttons' onClick={() => fbLogin(auth)} ><i class="fab fa-facebook"></i></button>
+                            </div>
                             <br /> <br />
                             <small
                                 onClick={() => setIsRegistered(!isRegistered)}

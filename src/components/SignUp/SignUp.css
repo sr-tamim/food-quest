@@ -4,21 +4,23 @@
     max-width: 1200px;
     margin: 40px auto;
 }
-#sign-up-container form{
+form{
     text-align: center;
+    padding: 10px;
 }
 
 .input-field-container{
     background: transparent;
     position: relative;
-    width: 500px;
-    margin: 20px auto;
-    border: 1px solid black;
+    max-width: 500px;
+    margin: 30px auto;
+    border: 1px solid #CD587E;
     border-radius: 10px;
+    box-shadow: 0 0 20px #e7e7e7;
 }
 .input-field-container input{
-    font-size: 18px;
     background: transparent;
+    font-size: 18px;
     width: 100%;
     border: 0;
     outline: 0;
@@ -27,12 +29,13 @@
 .input-field-container input::placeholder{ color: transparent; }
 .input-field-container label{
     background: white;
-    color: gray;
+    color:  #CD587E;
     position: absolute;
     transition: 300ms;
     font-size: 15px;
     top: -10px;
-    left: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 0 5px;
     z-index: 1;
     cursor: none;
@@ -40,15 +43,17 @@
 }
 .input-field-container input:not(:focus):placeholder-shown + label{
     font-size: 25px;
+    color: #a5a5a5;
     top: 0;
     left: 0;
-    padding: 5px;
+    transform: translateX(0);
+    padding: 5px 15px;
     z-index: -1;
 }
 
 .submit-button{
     color: white;
-    background: crimson;
+    background: linear-gradient(to right, #CD587E, #762F76);
     font-size: 20px;
     padding: 10px 20px;
     border: 0;
