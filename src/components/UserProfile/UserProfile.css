@@ -1,0 +1,19 @@
+
+#profile-container{
+    text-align: center;
+}
+#profile-container img{
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgb(214, 214, 214);
+}
+#sign-out-but{
+    background: crimson;
+    color: white;
+    font-size: 20px;
+    padding: 10px 25px;
+    margin: 20px 0;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}

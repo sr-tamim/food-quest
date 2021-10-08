@@ -1,32 +1,54 @@
 
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import FoodDetails from './components/FoodDetails/FoodDetails';
 import Foods from './components/Foods/Foods';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
+import UserPage from './components/UserPage/UserPage';
 import useCart from './hooks/useCart';
+import initializeFirebase from './Firebase/firebase-init';
 
 export const CartContext = createContext();
 
-function App() {
-  const [cart, setCart] = useCart('cart');
+// get authentication
+initializeFirebase(); // initialize firebase app
+const auth = getAuth();
+export const AuthContext = createContext();
 
+function App() {
+  const [user, setUser] = useState({});
+  onAuthStateChanged(auth, (usr) => {
+    if (usr) { setUser(usr) }
+    else if (user.email) {
+      setUser({})
+      /*if usr is null but user is not {} then set user as {}*/
+    }
+  });
+
+  const [cart, setCart] = useCart({});
 
   return (
     <CartContext.Provider value={[cart, setCart]}>
       <div className="App">
         <Router>
-          <Header />
+          <Header user={user} />
           <Switch>
             <Route exact path="/" >
               <Home />
             </Route>
             <Route path="/home" >
-              <Home />
+              <Home user={user} />
+            </Route>
+            <Route path="/user" >
+              <AuthContext.Provider value={auth} >
+                <UserPage
+                  useUser={{ user: user, setUser: setUser }} />
+              </AuthContext.Provider>
             </Route>
             <Route exact path="/foods" >
               <Foods />

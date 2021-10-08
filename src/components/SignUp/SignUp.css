@@ -1,0 +1,57 @@
+
+#sign-up-container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+#sign-up-container form{
+    text-align: center;
+}
+
+.input-field-container{
+    background: transparent;
+    position: relative;
+    width: 500px;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.input-field-container input{
+    font-size: 18px;
+    background: transparent;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 15px 10px 10px;
+}
+.input-field-container input::placeholder{ color: transparent; }
+.input-field-container label{
+    background: white;
+    color: gray;
+    position: absolute;
+    transition: 300ms;
+    font-size: 15px;
+    top: -10px;
+    left: 10px;
+    padding: 0 5px;
+    z-index: 1;
+    cursor: none;
+    user-select: none;
+}
+.input-field-container input:not(:focus):placeholder-shown + label{
+    font-size: 25px;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    z-index: -1;
+}
+
+.submit-button{
+    color: white;
+    background: crimson;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}

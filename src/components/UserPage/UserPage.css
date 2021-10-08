@@ -1,0 +1,18 @@
+
+#user-page{
+    margin: 150px 0;
+    text-align: center;
+}
+.sign-in-buttons{
+    font-size: 25px;
+    background: crimson;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px;
+    border: 0;
+    cursor: pointer;
+}
+.toggleRegister{
+    font-size: 18px;
+    cursor: pointer;
+}

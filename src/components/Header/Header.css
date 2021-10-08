@@ -11,6 +11,7 @@ header{
 header nav{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 header .link{
     color: #ff577e;

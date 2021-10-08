@@ -8,7 +8,7 @@ function showSideCart() {
     document.getElementById('side-cart').classList.toggle('show');
 }
 
-const Header = () => {
+const Header = props => {
     const [cart, setCart] = useContext(CartContext);
 
     document.addEventListener('scroll', () => {
@@ -31,6 +31,13 @@ const Header = () => {
                 </div>
                 <div className="link" onClick={showSideCart}>Cart
                     <span id="cart-length">{cart.items.length}</span>
+                </div>
+                <div className="link">
+                    <NavLink activeStyle={{ color: '#ce3b5d' }} style={linkStyle} to="/user">
+                        {
+                            !props.user.email ? "Login" : "Profile"
+                        }
+                    </NavLink>
                 </div>
             </nav>
 
