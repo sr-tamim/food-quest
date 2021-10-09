@@ -27,7 +27,7 @@ const SignUp = () => {
         <div id="sign-up-container">
             <form onSubmit={handleSubmit} >
                 <div className="form-heading">
-                    <i class="fas fa-user-plus"></i> <br />
+                    <i className="fas fa-user-plus"></i> <br />
                     <span>Create Account</span>
                 </div>
                 <div className="input-field-container">
