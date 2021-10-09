@@ -43,14 +43,13 @@ const Header = props => {
 
             {/* cart drawer */}
             <div id="side-cart">
-                <div id="cart-head">
+                <div id="side-cart-head">
                     <h1>Cart</h1>
-                    <div className="close-side-cart" style={{ cursor: 'pointer' }} onClick={showSideCart}>X</div>
+                    <div className="close-side-cart" style={{ cursor: 'pointer' }} onClick={showSideCart}>
+                        <i class="fas fa-times"></i>
+                    </div>
                 </div>
-                <div className="side-cart-button">
-                    <button onClick={() => emptyCart(setCart)}>Empty Cart</button>
-                </div>
-                <div>
+                <div className="side-cart-items">
 
                     {
                         cart.items.filter((f, index) => cart.items.indexOf(f) === index).map(food => {
@@ -68,6 +67,9 @@ const Header = props => {
                             )
                         })
                     }
+                </div>
+                <div className="side-cart-button">
+                    <button onClick={() => emptyCart(setCart)}>Empty Cart</button>
                 </div>
             </div>
         </header>

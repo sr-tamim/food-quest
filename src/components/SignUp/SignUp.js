@@ -26,6 +26,10 @@ const SignUp = () => {
     return (
         <div id="sign-up-container">
             <form onSubmit={handleSubmit} >
+                <div className="form-heading">
+                    <i class="fas fa-user-plus"></i> <br />
+                    <span>Create Account</span>
+                </div>
                 <div className="input-field-container">
                     <input type="text" id="nameInput" onBlur={handleInput} placeholder="Name" required />
                     <label>Name</label>

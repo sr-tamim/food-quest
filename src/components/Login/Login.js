@@ -20,6 +20,10 @@ const Login = () => {
     return (
         <div>
             <form onSubmit={handleSubmit} >
+                <div className="form-heading">
+                    <i class="fas fa-user"></i> <br />
+                    <span>Sign In</span>
+                </div>
                 <div className="input-field-container">
                     <input type="email" id="emailInput" onBlur={handleInput} placeholder="Email" required />
                     <label>Email</label>

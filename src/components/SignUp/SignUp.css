@@ -14,13 +14,29 @@ form{
     position: relative;
     max-width: 500px;
     margin: 30px auto;
-    border: 1px solid #CD587E;
+    border-bottom: 2px solid #CD587E;
     border-radius: 10px;
     box-shadow: 0 0 20px #e7e7e7;
 }
+
+.form-heading span{
+    font-size: 30px;
+    font-weight: bold;
+    background: linear-gradient(to right, #CD587E, #762F76);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.form-heading i{
+    font-size: 40px;
+    background: linear-gradient(#CD587E, #762F76);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 .input-field-container input{
     background: transparent;
-    font-size: 18px;
+    font-size: 20px;
     width: 100%;
     border: 0;
     outline: 0;
@@ -47,7 +63,7 @@ form{
     top: 0;
     left: 0;
     transform: translateX(0);
-    padding: 5px 15px;
+    padding: 10px 15px;
     z-index: -1;
 }
 
