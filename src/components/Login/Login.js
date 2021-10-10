@@ -1,10 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../App';
 import loginUser from '../../Firebase/login';
-import { UserContext } from '../UserPage/UserPage';
 
-const Login = () => {
-    const setUser = useContext(UserContext).setUser;
+const Login = ({ setUser }) => {
     const auth = useContext(AuthContext);
 
     const [email, setEmail] = useState('');
@@ -25,11 +23,11 @@ const Login = () => {
                     <span>Sign In</span>
                 </div>
                 <div className="input-field-container">
-                    <input type="email" id="emailInput" onBlur={handleInput} placeholder="Email" required />
+                    <input type="email" id="emailInput" onChange={handleInput} placeholder="Email" required />
                     <label>Email</label>
                 </div>
                 <div className="input-field-container">
-                    <input type="password" id="passwordInput" onBlur={handleInput} placeholder="Password" required />
+                    <input type="password" id="passwordInput" onChange={handleInput} placeholder="Password" required />
                     <label>Password</label>
                 </div>
                 <input type="submit" className="submit-button" value="Login" />

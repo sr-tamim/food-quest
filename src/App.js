@@ -1,6 +1,6 @@
 
 import { createContext, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import FoodDetails from './components/FoodDetails/FoodDetails';
@@ -12,6 +12,7 @@ import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 import UserPage from './components/UserPage/UserPage';
 import useCart from './hooks/useCart';
 import initializeFirebase from './Firebase/firebase-init';
+import UserProfile from './components/UserProfile/UserProfile';
 
 export const CartContext = createContext();
 
@@ -22,6 +23,7 @@ export const AuthContext = createContext();
 
 function App() {
   const [user, setUser] = useState({});
+
   onAuthStateChanged(auth, (usr) => {
     if (usr) { setUser(usr) }
     else if (Object.keys(user).length) {
@@ -44,12 +46,20 @@ function App() {
             <Route path="/home" >
               <Home user={user} />
             </Route>
-            <Route path="/user" >
-              <AuthContext.Provider value={auth} >
-                <UserPage
-                  useUser={{ user: user, setUser: setUser }} />
-              </AuthContext.Provider>
-            </Route>
+            <AuthContext.Provider value={auth} >
+              <Route path="/user" >
+                {
+                  Object.keys(user).length ? <Redirect to="/profile" /> :
+                    <UserPage setUser={setUser} />
+                }
+              </Route>
+              <Route path="/profile" >
+                {
+                  !Object.keys(user).length ? <Redirect to="/user" /> :
+                    <UserProfile user={user} setUser={setUser} />
+                }
+              </Route>
+            </AuthContext.Provider>
             <Route exact path="/foods" >
               <Foods />
             </Route>

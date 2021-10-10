@@ -1,12 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { UserContext } from '../UserPage/UserPage'
 import "./SignUp.css";
 import createUserWithEmail from '../../Firebase/email-sign-in';
 import { AuthContext } from '../../App';
 
 
-const SignUp = () => {
-    const setUser = useContext(UserContext).setUser;
+const SignUp = (setUser) => {
     const auth = useContext(AuthContext);
 
     const [email, setEmail] = useState('');
@@ -19,6 +17,7 @@ const SignUp = () => {
     }
     function handleSubmit(e) {
         e.preventDefault();
+        if (password.length < 6) { alert('password should be at least 6 characters'); return; }
         createUserWithEmail(auth, email, password, name, setUser);
     }
 
@@ -31,15 +30,15 @@ const SignUp = () => {
                     <span>Create Account</span>
                 </div>
                 <div className="input-field-container">
-                    <input type="text" id="nameInput" onBlur={handleInput} placeholder="Name" required />
+                    <input type="text" id="nameInput" onChange={handleInput} placeholder="Name" required />
                     <label>Name</label>
                 </div>
                 <div className="input-field-container">
-                    <input type="email" id="emailInput" onBlur={handleInput} placeholder="Email" required />
+                    <input type="email" id="emailInput" onChange={handleInput} placeholder="Email" required />
                     <label>Email</label>
                 </div>
                 <div className="input-field-container">
-                    <input type="password" id="passwordInput" onBlur={handleInput} placeholder="Password" required />
+                    <input type="password" id="passwordInput" onChange={handleInput} placeholder="Password" required />
                     <label>Password</label>
                 </div>
                 <input type="submit" className="submit-button" value="Sign Up" />

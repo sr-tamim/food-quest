@@ -1,17 +1,15 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../App';
 import userSignOut from '../../Firebase/sign-out';
-import { UserContext } from '../UserPage/UserPage';
 import "./UserProfile.css";
 
-const UserProfile = () => {
-    const { user, setUser } = useContext(UserContext);
+const UserProfile = ({ user, setUser }) => {
     const auth = useContext(AuthContext);
 
     const { displayName, photoURL, email } = user.providerData[0];
     return (
-        <div>
-            <div id="profile-container">
+        <div id="profile-container">
+            <div>
                 <div className="profile-img">
                     {
                         photoURL ? <img src={user.photoURL} alt="" />

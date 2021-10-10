@@ -31,11 +31,12 @@ const Header = props => {
                     <span id="cart-length">{cart.items.length}</span>
                 </div>
                 <div className="link">
-                    <NavLink activeStyle={{ color: '#ce3b5d' }} style={linkStyle} to="/user">
-                        {
-                            !props.user.email ? "Login" : "Profile"
-                        }
-                    </NavLink>
+                    {
+                        !props.user.email ?
+                            <NavLink activeStyle={{ color: '#ce3b5d' }} style={linkStyle} to="/user">Login</NavLink>
+                            :
+                            <NavLink activeStyle={{ color: '#ce3b5d' }} style={linkStyle} to="/profile">Profile</NavLink>
+                    }
                 </div>
             </nav>
             <CartDrawer />

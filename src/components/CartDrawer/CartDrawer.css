@@ -78,6 +78,7 @@
     background: linear-gradient(to right, #cc577e, #783076);
     padding: 5px 10px;
     border: 0;
+    cursor: pointer;
 }
 
 .side-cart-button{
