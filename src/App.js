@@ -13,65 +13,54 @@ import UserPage from './components/UserPage/UserPage';
 import useCart from './hooks/useCart';
 import initializeFirebase from './Firebase/firebase-init';
 import UserProfile from './components/UserProfile/UserProfile';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import UserContext from './components/UserContext/UserContext';
+import useFirebase from './hooks/useFirebase';
 
 export const CartContext = createContext();
 
 // get authentication
 initializeFirebase(); // initialize firebase app
-const auth = getAuth();
-export const AuthContext = createContext();
 
 function App() {
-  const [user, setUser] = useState({});
-
-  onAuthStateChanged(auth, (usr) => {
-    if (usr) { setUser(usr) }
-    else if (Object.keys(user).length) {
-      setUser({})
-      /*if usr is null but user is not {} then set user as {}*/
-    }
-  });
-
   const [cart, setCart] = useCart({});
+  const { user } = useFirebase();
 
   return (
-    <CartContext.Provider value={[cart, setCart]}>
+    <UserContext>
       <div className="App">
-        <Router>
-          <Header user={user} />
-          <Switch>
-            <Route exact path="/" >
-              <Home />
-            </Route>
-            <Route path="/home" >
-              <Home user={user} />
-            </Route>
-            <AuthContext.Provider value={auth} >
+        <CartContext.Provider value={[cart, setCart]}>
+          <Router>
+            <Header />
+            <Switch>
+              <Route exact path="/" >
+                <Home />
+              </Route>
+              <Route path="/home" >
+                <Home />
+              </Route>
               <Route path="/user" >
                 {
                   Object.keys(user).length ? <Redirect to="/profile" /> :
-                    <UserPage setUser={setUser} />
+                    <UserPage />
                 }
               </Route>
-              <Route path="/profile" >
-                {
-                  !Object.keys(user).length ? <Redirect to="/user" /> :
-                    <UserProfile user={user} setUser={setUser} />
-                }
+              <PrivateRoute path="/profile" >
+                <UserProfile />
+              </PrivateRoute>
+              <Route path="/foods" >
+                <Foods />
               </Route>
-            </AuthContext.Provider>
-            <Route exact path="/foods" >
-              <Foods />
-            </Route>
-            <Route path="/foods/:foodId" >
-              <FoodDetails />
-            </Route>
-            <Route exact path="*"> <NotFoundPage /> </Route>
-          </Switch>
-        </Router>
+              <Route path="/foods/:foodId" >
+                <FoodDetails />
+              </Route>
+              <Route path="*"> <NotFoundPage /> </Route>
+            </Switch>
+          </Router>
+        </CartContext.Provider>
         <Footer />
       </div>
-    </CartContext.Provider>
+    </UserContext>
   );
 }
 

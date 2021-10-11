@@ -3,22 +3,22 @@ import "./UserPage.css";
 import SignUp from '../SignUp/SignUp';
 import Login from '../Login/Login';
 import googleSignIn from '../../Firebase/google-sign-in';
-import { AuthContext } from '../../App';
 import gitHubLogin from '../../Firebase/github-sign-in';
 import fbLogin from '../../Firebase/fb-sign-in';
 import msLogin from '../../Firebase/ms-sign-in';
 import twitterLogin from '../../Firebase/twitter-sign-in';
+import { userContext } from '../UserContext/UserContext';
 
 
-const UserPage = ({ setUser }) => {
-    const auth = useContext(AuthContext);
+const UserPage = () => {
+    const { auth } = useContext(userContext);
     const [isRegistered, setIsRegistered] = useState(false);
     return (
         <div id="user-page">
             {
                 <div>
-                    {isRegistered ? <Login setUser={setUser} />
-                        : <SignUp setUser={setUser} />
+                    {isRegistered ? <Login />
+                        : <SignUp />
                     }
                     <br /><br />
                     <div>

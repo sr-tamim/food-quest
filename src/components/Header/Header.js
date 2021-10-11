@@ -3,11 +3,13 @@ import { NavLink } from 'react-router-dom';
 import { CartContext } from '../../App';
 import showCartDrawer from '../../utilities/showCartDrawer';
 import CartDrawer from '../CartDrawer/CartDrawer';
+import { userContext } from '../UserContext/UserContext';
 import "./Header.css";
 
 
-const Header = props => {
+const Header = () => {
     const [cart] = useContext(CartContext);
+    const { user } = useContext(userContext);
 
     document.addEventListener('scroll', () => {
         if (window.scrollY > 50) { document.getElementById('header').style.background = 'white' }
@@ -32,7 +34,7 @@ const Header = props => {
                 </div>
                 <div className="link">
                     {
-                        !props.user.email ?
+                        !user.email ?
                             <NavLink activeStyle={{ color: '#ce3b5d' }} style={linkStyle} to="/user">Login</NavLink>
                             :
                             <NavLink activeStyle={{ color: '#ce3b5d' }} style={linkStyle} to="/profile">Profile</NavLink>

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../App';
 import userSignOut from '../../Firebase/sign-out';
+import { userContext } from '../UserContext/UserContext';
 import "./UserProfile.css";
 
-const UserProfile = ({ user, setUser }) => {
-    const auth = useContext(AuthContext);
+const UserProfile = () => {
+    const { user, setUser, auth } = useContext(userContext);
 
     const { displayName, photoURL, email } = user.providerData[0];
     return (
