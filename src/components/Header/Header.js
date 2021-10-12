@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { CartContext } from '../../App';
+import { CartContext, UserContext } from '../../App';
 import showCartDrawer from '../../utilities/showCartDrawer';
 import CartDrawer from '../CartDrawer/CartDrawer';
-import { userContext } from '../UserContext/UserContext';
 import "./Header.css";
 
 
 const Header = () => {
     const [cart] = useContext(CartContext);
-    const { user } = useContext(userContext);
+    const { user } = useContext(UserContext);
 
     document.addEventListener('scroll', () => {
         if (window.scrollY > 50) { document.getElementById('header').style.background = 'white' }

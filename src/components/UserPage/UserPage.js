@@ -7,12 +7,12 @@ import gitHubLogin from '../../Firebase/github-sign-in';
 import fbLogin from '../../Firebase/fb-sign-in';
 import msLogin from '../../Firebase/ms-sign-in';
 import twitterLogin from '../../Firebase/twitter-sign-in';
-import { userContext } from '../UserContext/UserContext';
 import { useHistory, useLocation } from 'react-router';
+import { UserContext } from '../../App';
 
 
 const UserPage = () => {
-    const { auth } = useContext(userContext);
+    const { auth } = useContext(UserContext);
     const [isRegistered, setIsRegistered] = useState(false);
 
     const history = useHistory();

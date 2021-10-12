@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Redirect, Route } from 'react-router';
-import { userContext } from '../UserContext/UserContext';
+import { UserContext } from '../../App';
 
 const PrivateRoute = ({ children, ...rest }) => {
-    const { currentUser } = useContext(userContext).auth;
+    const { currentUser } = useContext(UserContext).auth;
     return (
         <Route {...rest}
             render={({ location }) => currentUser ? (children)

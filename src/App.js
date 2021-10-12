@@ -1,5 +1,5 @@
 
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 import FoodDetails from './components/FoodDetails/FoodDetails';
@@ -13,21 +13,37 @@ import useCart from './hooks/useCart';
 import initializeFirebase from './Firebase/firebase-init';
 import UserProfile from './components/UserProfile/UserProfile';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import UserContext from './components/UserContext/UserContext';
-import useFirebase from './hooks/useFirebase';
 import Checkout from './components/Checkout/Checkout';
+import { getAuth, onAuthStateChanged } from '@firebase/auth';
 
 export const CartContext = createContext();
+export const UserContext = createContext();
 
 // get authentication
 initializeFirebase(); // initialize firebase app
+const auth = getAuth();
 
 function App() {
+  const [user, setUser] = useState({});
+
+  onAuthStateChanged(auth, (usr) => {
+    if (usr) { setUser(usr) }
+    else if (Object.keys(user).length) {
+      setUser({})
+      /*if usr is null but user is not {} then set user as {}*/
+    }
+  });
+
   const [cart, setCart] = useCart({});
-  const { currentUser } = useFirebase().auth;
+  const { currentUser } = auth;
+  const allContext = {
+    auth: auth,
+    user: user,
+    setUser: setUser
+  }
 
   return (
-    <UserContext>
+    <UserContext.Provider value={allContext}>
       <div className="App">
         <CartContext.Provider value={[cart, setCart]}>
           <Router>
@@ -60,7 +76,7 @@ function App() {
         </CartContext.Provider>
         <Footer />
       </div>
-    </UserContext>
+    </UserContext.Provider>
   );
 }
 

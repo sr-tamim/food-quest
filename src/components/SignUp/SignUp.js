@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
 import "./SignUp.css";
 import createUserWithEmail from '../../Firebase/email-sign-in';
-import { userContext } from '../UserContext/UserContext';
+import { UserContext } from '../../App';
 
 
 const SignUp = () => {
-    const { setUser, auth } = useContext(userContext);
+    const { setUser, auth } = useContext(UserContext);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
