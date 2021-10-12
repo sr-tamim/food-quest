@@ -1,8 +1,7 @@
 
-import { createContext, useState } from 'react';
+import { createContext } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import FoodDetails from './components/FoodDetails/FoodDetails';
 import Foods from './components/Foods/Foods';
 import Footer from './components/Footer/Footer';
@@ -25,7 +24,7 @@ initializeFirebase(); // initialize firebase app
 
 function App() {
   const [cart, setCart] = useCart({});
-  const { user } = useFirebase();
+  const { currentUser } = useFirebase().auth;
 
   return (
     <UserContext>
@@ -41,10 +40,7 @@ function App() {
                 <Home />
               </Route>
               <Route path="/user" >
-                {
-                  Object.keys(user).length ? <Redirect to="/profile" /> :
-                    <UserPage />
-                }
+                {!currentUser ? <UserPage /> : <Redirect to="/profile" />}
               </Route>
               <PrivateRoute path="/profile" >
                 <UserProfile />

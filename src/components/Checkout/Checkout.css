@@ -1,0 +1,14 @@
+
+#checkout-container{
+    margin: 150px 0;
+}
+#checkout-heading{
+    text-align: center;
+    font-size: 40px;
+    margin: 20px 0;
+}
+#checkout-heading span{
+    background: linear-gradient(to right, #CD587E, #762F76);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

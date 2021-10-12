@@ -52,7 +52,10 @@ const CartDrawer = () => {
                 {cart.items.length > 0 &&
                     <div className="side-cart-button">
                         <button onClick={() => emptyCart(setCart)}>Empty Cart</button>
-                        <button onClick={() => history.push('/checkout')} >Checkout</button>
+                        <button onClick={() => {
+                            history.push('/checkout');
+                            showCartDrawer();
+                        }} >Checkout</button>
                     </div>}
             </div>
         </div>

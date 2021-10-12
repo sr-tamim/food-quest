@@ -8,11 +8,16 @@ import fbLogin from '../../Firebase/fb-sign-in';
 import msLogin from '../../Firebase/ms-sign-in';
 import twitterLogin from '../../Firebase/twitter-sign-in';
 import { userContext } from '../UserContext/UserContext';
+import { useHistory, useLocation } from 'react-router';
 
 
 const UserPage = () => {
     const { auth } = useContext(userContext);
     const [isRegistered, setIsRegistered] = useState(false);
+
+    const history = useHistory();
+    const pathname = useLocation()?.state?.from.pathname || '/';
+    const backToPage = () => history.push(pathname);
     return (
         <div id="user-page">
             {
@@ -23,7 +28,10 @@ const UserPage = () => {
                     <br /><br />
                     <div>
                         Sign In With <br />
-                        <span className='sign-in-buttons' onClick={() => googleSignIn(auth)} ><i className="fab fa-google"></i></span>
+                        <span className='sign-in-buttons' onClick={
+                            () => googleSignIn(auth).then(() => backToPage())} >
+                            <i className="fab fa-google"></i>
+                        </span>
                         <span className='sign-in-buttons' onClick={() => gitHubLogin(auth)} ><i className="fab fa-github"></i></span>
                         <span className='sign-in-buttons' onClick={() => fbLogin(auth)} ><i className="fab fa-facebook"></i></span>
                         <span className='sign-in-buttons' onClick={() => twitterLogin(auth)} ><i className="fab fa-twitter"></i></span>
