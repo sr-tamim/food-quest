@@ -6,7 +6,7 @@ import "./UserProfile.css";
 const UserProfile = () => {
     const { user, setUser, auth } = useContext(userContext);
 
-    const { displayName, photoURL, email } = user.providerData[0];
+    const { displayName, photoURL, email } = user;
     return (
         <div id="profile-container">
             <div>
@@ -18,7 +18,7 @@ const UserProfile = () => {
                 </div>
                 <h1>
                     {
-                        displayName || user.reloadUserInfo.screenName
+                        displayName || user?.reloadUserInfo?.screenName
                     }
                 </h1>
                 <h4>{email || 'email access denied'}</h4>

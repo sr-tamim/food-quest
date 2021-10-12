@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router';
 import { CartContext } from '../../App';
 import changeItemQuantityCart from '../../utilities/changeItemQuantityCart';
 import emptyCart from '../../utilities/emptyCart';
@@ -8,6 +9,7 @@ import "./CartDrawer.css";
 
 
 const CartDrawer = () => {
+    const history = useHistory();
     const [cart, setCart] = useContext(CartContext);
     const handleQuantityButton = (method, food) => changeItemQuantityCart(method, food, cart, setCart);
     return (
@@ -50,6 +52,7 @@ const CartDrawer = () => {
                 {cart.items.length > 0 &&
                     <div className="side-cart-button">
                         <button onClick={() => emptyCart(setCart)}>Empty Cart</button>
+                        <button onClick={() => history.push('/checkout')} >Checkout</button>
                     </div>}
             </div>
         </div>

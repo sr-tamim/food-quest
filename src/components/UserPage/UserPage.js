@@ -23,11 +23,11 @@ const UserPage = () => {
                     <br /><br />
                     <div>
                         Sign In With <br />
-                        <button className='sign-in-buttons' onClick={() => googleSignIn(auth)} ><i className="fab fa-google"></i></button>
-                        <button className='sign-in-buttons' onClick={() => gitHubLogin(auth)} ><i className="fab fa-github"></i></button>
-                        <button className='sign-in-buttons' onClick={() => fbLogin(auth)} ><i className="fab fa-facebook"></i></button>
-                        <button className='sign-in-buttons' onClick={() => twitterLogin(auth)} ><i className="fab fa-twitter"></i></button>
-                        <button className='sign-in-buttons' onClick={() => msLogin(auth)} ><i className="fab fa-microsoft"></i></button>
+                        <span className='sign-in-buttons' onClick={() => googleSignIn(auth)} ><i className="fab fa-google"></i></span>
+                        <span className='sign-in-buttons' onClick={() => gitHubLogin(auth)} ><i className="fab fa-github"></i></span>
+                        <span className='sign-in-buttons' onClick={() => fbLogin(auth)} ><i className="fab fa-facebook"></i></span>
+                        <span className='sign-in-buttons' onClick={() => twitterLogin(auth)} ><i className="fab fa-twitter"></i></span>
+                        <span className='sign-in-buttons' onClick={() => msLogin(auth)} ><i className="fab fa-microsoft"></i></span>
                     </div>
                     <br /> <br />
                     <small

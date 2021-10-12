@@ -4,13 +4,14 @@
     text-align: center;
 }
 .sign-in-buttons{
+    display: inline-block;
     font-size: 40px;
     background: linear-gradient(45deg, #CD587E, #762F76);
     background-size: 300%;
     background-position: top right;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: background 500ms;
+    transition: background 300ms;
     padding: 0;
     margin: 20px;
     border: 0;

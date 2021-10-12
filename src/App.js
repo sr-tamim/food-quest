@@ -16,6 +16,7 @@ import UserProfile from './components/UserProfile/UserProfile';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import UserContext from './components/UserContext/UserContext';
 import useFirebase from './hooks/useFirebase';
+import Checkout from './components/Checkout/Checkout';
 
 export const CartContext = createContext();
 
@@ -48,12 +49,15 @@ function App() {
               <PrivateRoute path="/profile" >
                 <UserProfile />
               </PrivateRoute>
-              <Route path="/foods" >
+              <Route exact path="/foods" >
                 <Foods />
               </Route>
               <Route path="/foods/:foodId" >
                 <FoodDetails />
               </Route>
+              <PrivateRoute path="/checkout" >
+                <Checkout />
+              </PrivateRoute>
               <Route path="*"> <NotFoundPage /> </Route>
             </Switch>
           </Router>

@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import "./SignUp.css";
 import createUserWithEmail from '../../Firebase/email-sign-in';
 import { userContext } from '../UserContext/UserContext';
+import { useLocation } from 'react-router';
 
 
 const SignUp = () => {

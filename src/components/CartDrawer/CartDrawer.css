@@ -1,4 +1,14 @@
 
+button{
+    background: linear-gradient(to right, #cc577e, #783076) left;
+    background-size: 130%;
+    transition: background 500ms;
+}
+button:hover{
+    background-position: right;
+}
+
+
 #side-cart{
     display: flex;
     flex-direction: column;
@@ -59,16 +69,19 @@
 }
 
 .quantity-buttons{
-    font-size: 25px;
+    display: flex;
+    font-size: 22px;
     padding: 0 15px;
     margin: 10px 0;
 }
 .quantity-but{
-    font-size: 15px;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 12px;
     font-weight: bold;
     padding: 5px 10px;
     margin: 0 10px;
-    box-shadow: 0 0 5px gray;
+    box-shadow: 0 0 5px rgb(194, 194, 194);
     cursor: pointer;
     user-select: none;
 }
@@ -82,17 +95,18 @@
 }
 
 .side-cart-button{
-    width: 70%;
-    margin: auto;
-    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
 }
 .side-cart-button button{
     width: 100%;
     color: white;
-    background: linear-gradient(to right, #cc577e, #783076);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     padding: 15px;
+    margin: 0 10px;
     border: 0;
     border-radius: 5px;
     box-shadow: 0 0 10px gray;
