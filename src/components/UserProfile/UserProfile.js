@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { UserContext } from '../../App';
 import userSignOut from '../../Firebase/sign-out';
+import { UserContext } from '../AuthContext/AuthContext';
 import "./UserProfile.css";
 
 const UserProfile = () => {

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import "./SignUp.css";
 import createUserWithEmail from '../../Firebase/email-sign-in';
-import { UserContext } from '../../App';
+import { UserContext } from '../AuthContext/AuthContext';
 
 
 const SignUp = () => {

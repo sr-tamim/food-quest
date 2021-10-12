@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { UserContext } from '../../App';
 import loginUser from '../../Firebase/login';
+import { UserContext } from '../AuthContext/AuthContext';
 
 const Login = () => {
     const { setUser, auth } = useContext(UserContext);

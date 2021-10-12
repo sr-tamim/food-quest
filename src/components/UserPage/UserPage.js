@@ -8,7 +8,7 @@ import fbLogin from '../../Firebase/fb-sign-in';
 import msLogin from '../../Firebase/ms-sign-in';
 import twitterLogin from '../../Firebase/twitter-sign-in';
 import { useHistory, useLocation } from 'react-router';
-import { UserContext } from '../../App';
+import { UserContext } from '../AuthContext/AuthContext';
 
 
 const UserPage = () => {

@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { CartContext, UserContext } from '../../App';
+import { CartContext } from '../../App';
 import showCartDrawer from '../../utilities/showCartDrawer';
+import { UserContext } from '../AuthContext/AuthContext';
 import CartDrawer from '../CartDrawer/CartDrawer';
 import "./Header.css";
 
