@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import loginUser from '../../Firebase/login';
 import { UserContext } from '../AuthContext/AuthContext';
 
-const Login = () => {
+const Login = ({ backToPage }) => {
     const { setUser, auth } = useContext(UserContext);
 
     const [email, setEmail] = useState('');
@@ -13,7 +13,9 @@ const Login = () => {
     }
     function handleSubmit(e) {
         e.preventDefault();
-        loginUser(auth, email, password, setUser);
+        loginUser(auth, email, password, setUser)
+            .then(() => backToPage())
+            .catch((error) => { alert(error.message) });
     }
     return (
         <div>

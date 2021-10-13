@@ -4,7 +4,7 @@ import createUserWithEmail from '../../Firebase/email-sign-in';
 import { UserContext } from '../AuthContext/AuthContext';
 
 
-const SignUp = () => {
+const SignUp = ({ backToPage }) => {
     const { setUser, auth } = useContext(UserContext);
 
     const [email, setEmail] = useState('');
@@ -18,7 +18,9 @@ const SignUp = () => {
     function handleSubmit(e) {
         e.preventDefault();
         if (password.length < 6) { alert('password should be at least 6 characters'); return; }
-        createUserWithEmail(auth, email, password, name, setUser);
+        createUserWithEmail(auth, email, password, name, setUser)
+            .then(() => backToPage())
+            .catch((error) => alert(error.message));
     }
 
 

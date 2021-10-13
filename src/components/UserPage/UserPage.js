@@ -18,24 +18,42 @@ const UserPage = () => {
     const history = useHistory();
     const pathname = useLocation()?.state?.from.pathname || '/';
     const backToPage = () => history.push(pathname);
+
+    function handleLoginButtons(loginFunction) {
+        loginFunction(auth).then(() => backToPage())
+            .catch(err => alert(err));
+    }
+
     return (
         <div id="user-page">
             {
                 <div>
-                    {isRegistered ? <Login />
-                        : <SignUp />
+                    {isRegistered ? <Login backToPage={backToPage} />
+                        : <SignUp backToPage={backToPage} />
                     }
                     <br /><br />
                     <div>
                         Sign In With <br />
-                        <span className='sign-in-buttons' onClick={
-                            () => googleSignIn(auth).then(() => backToPage())} >
+                        <span className='sign-in-buttons'
+                            onClick={() => handleLoginButtons(googleSignIn)} >
                             <i className="fab fa-google"></i>
                         </span>
-                        <span className='sign-in-buttons' onClick={() => gitHubLogin(auth)} ><i className="fab fa-github"></i></span>
-                        <span className='sign-in-buttons' onClick={() => fbLogin(auth)} ><i className="fab fa-facebook"></i></span>
-                        <span className='sign-in-buttons' onClick={() => twitterLogin(auth)} ><i className="fab fa-twitter"></i></span>
-                        <span className='sign-in-buttons' onClick={() => msLogin(auth)} ><i className="fab fa-microsoft"></i></span>
+
+                        <span className='sign-in-buttons'
+                            onClick={() => handleLoginButtons(gitHubLogin)} >
+                            <i className="fab fa-github"></i></span>
+
+                        <span className='sign-in-buttons'
+                            onClick={() => fbLogin(auth)} >
+                            <i className="fab fa-facebook"></i></span>
+
+                        <span className='sign-in-buttons'
+                            onClick={() => handleLoginButtons(twitterLogin)} >
+                            <i className="fab fa-twitter"></i></span>
+
+                        <span className='sign-in-buttons'
+                            onClick={() => handleLoginButtons(msLogin)} >
+                            <i className="fab fa-microsoft"></i></span>
                     </div>
                     <br /> <br />
                     <small
