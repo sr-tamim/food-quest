@@ -8,6 +8,11 @@
 *{
     font-family: 'Source Sans Pro', sans-serif;
 }
+.loading{
+    text-align: center;
+    font-size: 60px;
+    padding: 150px 0;
+}
 
 
 .input-field-container input, .input-field-container textarea{

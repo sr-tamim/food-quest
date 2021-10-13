@@ -1,9 +1,6 @@
 import { signInWithPopup, GithubAuthProvider } from "firebase/auth";
 
+const gitHubProvider = new GithubAuthProvider();
 export default function gitHubLogin(auth) {
-    const gitHubProvider = new GithubAuthProvider();
-    signInWithPopup(auth, gitHubProvider)
-        .catch((error) => {
-            alert(error.message);
-        });
+    return signInWithPopup(auth, gitHubProvider);
 }

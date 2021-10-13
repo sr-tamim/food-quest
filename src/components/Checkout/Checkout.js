@@ -9,11 +9,11 @@ const Checkout = () => {
             <h1 id="checkout-heading"><span>Checkout</span></h1>
             <form>
                 <div className="input-field-container">
-                    <input type="text" value={user.displayName && user.displayName} placeholder="" />
+                    <input type="text" defaultValue={user?.displayName} placeholder="Name" readOnly />
                     <label>Name</label>
                 </div>
                 <div className="input-field-container">
-                    <input type="email" value={user.email && user.email} placeholder="" />
+                    <input type="email" defaultValue={user?.email} placeholder="Email" readOnly />
                     <label>Email</label>
                 </div>
                 <div className="input-field-container">

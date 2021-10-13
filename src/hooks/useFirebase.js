@@ -9,19 +9,23 @@ const auth = getAuth();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
+    const [userLoading, setUserLoading] = useState(true);
 
     onAuthStateChanged(auth, (usr) => {
-        if (usr) { setUser(usr) }
+        if (usr) {
+            setUser(usr);
+        }
         else if (Object.keys(user).length) {
             setUser({})
             /*if usr is null but user is not {} then set user as {}*/
         }
+        setUserLoading(false)
     });
-
     return ({
         auth: auth,
         user: user,
-        setUser: setUser
+        setUser: setUser,
+        userLoading: userLoading
     });
 };
 
