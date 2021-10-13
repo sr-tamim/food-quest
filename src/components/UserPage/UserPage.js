@@ -26,6 +26,7 @@ const UserPage = () => {
 
     return (
         <div id="user-page">
+            {pathname !== '/' && <h4>You've to login first to access the page</h4>}
             {
                 <div>
                     {isRegistered ? <Login backToPage={backToPage} />
