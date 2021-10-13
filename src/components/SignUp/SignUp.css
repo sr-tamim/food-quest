@@ -34,39 +34,6 @@ form{
 }
 
 
-.input-field-container input{
-    background: transparent;
-    font-size: 20px;
-    width: 100%;
-    border: 0;
-    outline: 0;
-    padding: 15px 10px 10px;
-}
-.input-field-container input::placeholder{ color: transparent; }
-.input-field-container label{
-    background: white;
-    color:  #CD587E;
-    position: absolute;
-    transition: 300ms;
-    font-size: 15px;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0 5px;
-    z-index: 1;
-    cursor: none;
-    user-select: none;
-}
-.input-field-container input:not(:focus):placeholder-shown + label{
-    font-size: 25px;
-    color: #a5a5a5;
-    top: 0;
-    left: 0;
-    transform: translateX(0);
-    padding: 10px 15px;
-    z-index: -1;
-}
-
 .submit-button{
     color: white;
     background: linear-gradient(to right, #CD587E, #762F76);
