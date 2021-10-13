@@ -13,7 +13,9 @@
     font-size: 60px;
     padding: 150px 0;
 }
-
+.error-message{
+    color: red;
+}
 
 .input-field-container input, .input-field-container textarea{
     background: transparent;

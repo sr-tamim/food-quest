@@ -2,10 +2,12 @@ import React, { useContext, useState } from 'react';
 import "./SignUp.css";
 import createUserWithEmail from '../../Firebase/email-sign-in';
 import { UserContext } from '../AuthContext/AuthContext';
+import handleFirebaseError from '../../Firebase/handleFirebaseError';
 
 
 const SignUp = ({ backToPage }) => {
     const { setUser, auth } = useContext(UserContext);
+    const [userError, setUserError] = useState(null);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,11 +18,14 @@ const SignUp = ({ backToPage }) => {
         e.target.id === 'passwordInput' && setPassword(e.target.value);
     }
     function handleSubmit(e) {
-        e.preventDefault();
-        if (password.length < 6) { alert('password should be at least 6 characters'); return; }
+        e.preventDefault(); setUserError(null);
+        if (password.length < 6) {
+            setUserError({ message: 'password length<6' });
+            return;
+        }
         createUserWithEmail(auth, email, password, name, setUser)
             .then(() => backToPage())
-            .catch((error) => alert(error.message));
+            .catch((error) => setUserError(error.message));
     }
 
 
@@ -31,6 +36,7 @@ const SignUp = ({ backToPage }) => {
                     <i className="fas fa-user-plus"></i> <br />
                     <span>Create Account</span>
                 </div>
+                <div>{userError && handleFirebaseError(userError)}</div>
                 <div className="input-field-container">
                     <input type="text" id="nameInput" onChange={handleInput} placeholder="Name" required />
                     <label>Name</label>

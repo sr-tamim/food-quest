@@ -9,30 +9,36 @@ import msLogin from '../../Firebase/ms-sign-in';
 import twitterLogin from '../../Firebase/twitter-sign-in';
 import { useHistory, useLocation } from 'react-router';
 import { UserContext } from '../AuthContext/AuthContext';
+import handleFirebaseError from '../../Firebase/handleFirebaseError';
 
 
 const UserPage = () => {
     const { auth } = useContext(UserContext);
     const [isRegistered, setIsRegistered] = useState(false);
+    const [userError, setUserError] = useState(null);
 
     const history = useHistory();
     const pathname = useLocation()?.state?.from.pathname || '/';
     const backToPage = () => history.push(pathname);
 
     function handleLoginButtons(loginFunction) {
+        setUserError(null);
         loginFunction(auth).then(() => backToPage())
-            .catch(err => alert(err));
+            .catch(err => setUserError(err));
     }
 
     return (
         <div id="user-page">
-            {pathname !== '/' && <h4>You've to login first to access the page</h4>}
+            {pathname !== '/' && (<>
+                <h4>You've to login first to access the page</h4><br />
+            </>)}
             {
                 <div>
                     {isRegistered ? <Login backToPage={backToPage} />
                         : <SignUp backToPage={backToPage} />
                     }
                     <br /><br />
+                    {userError && handleFirebaseError(userError)}
                     <div>
                         Sign In With <br />
                         <span className='sign-in-buttons'
@@ -45,7 +51,7 @@ const UserPage = () => {
                             <i className="fab fa-github"></i></span>
 
                         <span className='sign-in-buttons'
-                            onClick={() => fbLogin(auth)} >
+                            onClick={() => handleLoginButtons(fbLogin)} >
                             <i className="fab fa-facebook"></i></span>
 
                         <span className='sign-in-buttons'

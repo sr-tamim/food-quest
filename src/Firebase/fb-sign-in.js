@@ -2,8 +2,8 @@ import { signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 
 const fbProvider = new FacebookAuthProvider();
 export default function fbLogin(auth) {
-    return signInWithPopup(auth, fbProvider)
-        .then((result) => {
+    return signInWithPopup(auth, fbProvider);
+    /*     .then((result) => {
             // The signed-in user info.
             // const user = result.user;
 
@@ -12,5 +12,5 @@ export default function fbLogin(auth) {
             const accessToken = credential.accessToken;
             console.log(credential, accessToken);
 
-        });
+        }); */
 }

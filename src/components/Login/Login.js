@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
+import handleFirebaseError from '../../Firebase/handleFirebaseError';
 import loginUser from '../../Firebase/login';
 import { UserContext } from '../AuthContext/AuthContext';
 
 const Login = ({ backToPage }) => {
     const { setUser, auth } = useContext(UserContext);
+    const [userError, setUserError] = useState(null);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -12,10 +14,10 @@ const Login = ({ backToPage }) => {
         e.target.id === 'passwordInput' && setPassword(e.target.value);
     }
     function handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault(); setUserError(null);
         loginUser(auth, email, password, setUser)
             .then(() => backToPage())
-            .catch((error) => { alert(error.message) });
+            .catch((error) => setUserError(error));
     }
     return (
         <div>
@@ -24,6 +26,7 @@ const Login = ({ backToPage }) => {
                     <i className="fas fa-user"></i> <br />
                     <span>Sign In</span>
                 </div>
+                <div>{userError && handleFirebaseError(userError)}</div>
                 <div className="input-field-container">
                     <input type="email" id="emailInput" onChange={handleInput} placeholder="Email" required />
                     <label>Email</label>
